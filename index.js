@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const bodyParser = require('body-parser');
 const fs = require("fs");
+const port = process.env.PORT || 8000;
 
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -88,6 +89,6 @@ app.delete("/home", (req, res) => {
         });
     });
 });
-app.listen(8000, () => {
-    console.log("listening to port 8000...");
+app.listen(port, () => {
+    console.log(`listening to port ${port}...`);
 });
